@@ -8,7 +8,7 @@ with open(sys.argv[1], "r", encoding="utf-8") as f:
         n = int(line)
         p = 2
         q = 0
-        while p <= n:
+        while p**2 <= n:
             if n % p == 0:
                 q = n // p
                 print("{:d}={:d}*{:d}".format(n, q, p))

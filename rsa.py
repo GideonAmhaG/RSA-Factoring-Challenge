@@ -9,7 +9,7 @@ with open(sys.argv[1], "r", encoding="utf-8") as f:
         n = int(line)
         div = 2
         prime_factors = []
-        while div * 2 <= n:
+        while div**2 <= n:
             if n % div == 0:
                 prime_factors.append(div)
                 n //= div

@@ -6,6 +6,7 @@ import math
 
 def fact(n):
     pfs = []
+     
     while n % 2 == 0:
         pfs.append(2)
         n = n // 2
@@ -17,10 +18,10 @@ def fact(n):
         pfs.append(n)
     return pfs
 
-
 with open(sys.argv[1], "r", encoding="utf-8") as f:
     for line in f:
         n = int(line)
         pfs = fact(n)
         if len(pfs) == 2:
             print("{}={}*{}".format(n, pfs[1], pfs[0]))
+	

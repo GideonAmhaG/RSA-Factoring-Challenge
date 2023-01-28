@@ -23,12 +23,13 @@ def isPrime(n, k=5):
     return True
 
 
-def factors(n, b2 = -1, b1 = 10000):
+def factors(n, b2=-1, b1=10000):
     """ 2,3,5-wheel, then rho """
     def gcd(a, b):
-    """ euclid's algorithm """
+        """ euclid's algorithm """
         if b == 0: return a
         return gcd(b, a % b)
+
     def insertSorted(x, xs):
         """ linear search """
         i, ln = 0, len(xs)
@@ -49,9 +50,9 @@ def factors(n, b2 = -1, b1 = 10000):
     h, t, g, c = 1, 1, 1, 1
     while not isPrime(n):
         while b2 != 0 and g == 1:
-            h = (h*h+c)%n 
-            h = (h*h+c)%n 
-            t = (t*t+c)%n 
+            h = (h * h + c) % n
+            h = (h * h + c) % n
+            t = (t * t + c) % n
             g = gcd(t - h, n); b2 -= 1
         if b2 == 0: return fs
         if isPrime(g):
